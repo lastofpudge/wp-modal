@@ -50,12 +50,16 @@ window.onload = function(event) {
 
     if(!checkCookieResult) {
         var simpleModal = document.getElementById('simplemodal');
-        simpleModal.style.display = 'flex';
+        if (simpleModal) {
+            simpleModal.style.display = 'flex';
+        }
 
         var simpleModalButton = document.getElementById('simplemodal-ok');
-        simpleModalButton.onclick = function(event) {
-            setSimpleModalCookie(simpleModalCookieName, 1, 365 * 24 * 60 * 60);
-            simpleModal.style.display = 'none';
+        if(simpleModalButton) {
+            simpleModalButton.onclick = function(event) {
+                setSimpleModalCookie(simpleModalCookieName, 1, 365 * 24 * 60 * 60);
+                simpleModal.style.display = 'none';
+            }
         }
     }
 }
